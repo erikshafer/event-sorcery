@@ -9,7 +9,7 @@ It's a tool to assist with application development surrounding the software desi
 
 This library for .NET is:
  - Opinionated
-	- Snippets of code I find myself requently recreating and trying to fine-tune
+	- Largely driven by finding myself writing the same or similar snippets of code for multiple projects.
  - [Marten](https://martendb.io/)-oriented (dependent)
    - meaning [PostgreSQL](https://www.postgresql.org/) for event log persistence
 	- does not mean projections have to be bound to PostgreSQL
