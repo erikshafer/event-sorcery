@@ -9,11 +9,15 @@
 Event Sorcery is a tool for .NET developers to assist with application development surrounding the software design patterns of Event Sourcing and CQRS.
 
 This library for .NET is:
-- Unambitious
-- Opinionated
-- Currently designed for usage with [Marten](https://martendb.io/) and [MediatR](https://github.com/jbogard/MediatR).
+- Opinionated. To help accelerate a project's initial development.
+- Subscribes to various tenants of DDD, CQRS, Event Sourcing, and Asynchronous Messaging.
+- Built on top of proven, battle-worn, and time-tested technologies.
 
 This all has been largely driven by finding myself writing the similar snippets of code over and over for multiple projects.
+
+## Getting Started
+
+Event Sorcery is written for .NET 6. With 2020's release of .NET 5 we finally had a single successor to both .NET Core 3.1 and .NET Framework 4.8. With that unified vision for the .NET world. While many years-long issues being resolved, .NET 6 was able to focus on performance instead of compatability. This is why it is our starting point.
 
 ## Documentation
 
