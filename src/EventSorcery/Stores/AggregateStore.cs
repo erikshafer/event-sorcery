@@ -32,11 +32,11 @@ public class AggregateStore : IAggregateStore
     }
 
     public Task<AppendEventsResult> Store<T>(StreamName streamName, T aggregate, CancellationToken cancellationToken)
-        where T : Aggregate 
+        where T : Aggregate
         => _eventWriter.Store(streamName, aggregate, _amendEvent, cancellationToken);
 
     public Task<T> Load<T>(StreamName streamName, CancellationToken cancellationToken)
-        where T : Aggregate 
+        where T : Aggregate
         => LoadInternal<T>(streamName, true, cancellationToken);
 
     public Task<T> LoadOrNew<T>(StreamName streamName, CancellationToken cancellationToken)
@@ -54,10 +54,9 @@ public class AggregateStore : IAggregateStore
                 streamName,
                 StreamReadPosition.Start,
                 failIfNotFound,
-                cancellationToken
-            );
+                cancellationToken);
 
-            aggregate.Load(events.Select(x => x.Payload));
+            aggregate.Load(events.Select(x => x.Payload)!); // suppressed
         }
         catch (StreamNotFound) when (!failIfNotFound)
         {
