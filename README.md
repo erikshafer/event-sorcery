@@ -12,6 +12,7 @@ This library for .NET is:
  - Unambitious
  - Opinionated
  - Currently designed for usage with [Marten](https://martendb.io/) and [MediatR](https://github.com/jbogard/MediatR).
+   - With support for [EventStoreDB](https://www.eventstore.com/) after initial scaffolding.
 
 This all has been largely driven by finding myself writing the similar snippets of code over and over for multiple projects.
 
@@ -22,9 +23,10 @@ Coming soon.
 
 ## Change Log
 
-Actual log coming soon.
+Actual logs coming soon. For now, they're notes-to-self.
 
-2021-Dec-12: stood up project after talking about it for months
+- 2022-Jul-12: Extended functionality. Largely influenced by the Marten, Akka.NET, EventFlow, Eventuous APIs. Trying to get the best of all these worlds. Marten implementation will be first, followed by EventStoreDB. May make MediatR pipelines opt-in instead of opt-out.
+- 2021-Dec-12: stood up project after talking about it for months
 
 
 ## License
