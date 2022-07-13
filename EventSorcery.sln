@@ -2,6 +2,22 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSorcery", "src\EventSorcery\EventSorcery.csproj", "{F2C315D6-58DF-436D-85FB-2B2330E28AEA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{96F39B36-D2F1-4398-9AF7-505FE3728039}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marten", "Marten", "{05B05652-1586-4A6E-B497-0763C06CD84E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventStore", "EventStore", "{A7CDAC9A-76A0-4585-B146-D78E79C68B58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSorcery.EventStore", "EventSorcery.EventStore\EventSorcery.EventStore.csproj", "{FB9A75C4-50CE-4DA0-98D3-20E474B69A47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSorcery.Marten", "EventSorcery.Marten\EventSorcery.Marten.csproj", "{7CCC8D57-C083-47BC-9ADB-DF0AE4BBA4B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E1FA6A50-2357-45C0-B37B-D7B72CA17BBA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +28,18 @@ Global
 		{F2C315D6-58DF-436D-85FB-2B2330E28AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2C315D6-58DF-436D-85FB-2B2330E28AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2C315D6-58DF-436D-85FB-2B2330E28AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9A75C4-50CE-4DA0-98D3-20E474B69A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9A75C4-50CE-4DA0-98D3-20E474B69A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9A75C4-50CE-4DA0-98D3-20E474B69A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9A75C4-50CE-4DA0-98D3-20E474B69A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCC8D57-C083-47BC-9ADB-DF0AE4BBA4B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCC8D57-C083-47BC-9ADB-DF0AE4BBA4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCC8D57-C083-47BC-9ADB-DF0AE4BBA4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCC8D57-C083-47BC-9ADB-DF0AE4BBA4B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F2C315D6-58DF-436D-85FB-2B2330E28AEA} = {96F39B36-D2F1-4398-9AF7-505FE3728039}
+		{FB9A75C4-50CE-4DA0-98D3-20E474B69A47} = {A7CDAC9A-76A0-4585-B146-D78E79C68B58}
+		{7CCC8D57-C083-47BC-9ADB-DF0AE4BBA4B6} = {05B05652-1586-4A6E-B497-0763C06CD84E}
 	EndGlobalSection
 EndGlobal
