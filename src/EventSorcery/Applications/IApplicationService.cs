@@ -9,10 +9,10 @@ public interface IApplicationService
 
 public interface IApplicationService<T> : IApplicationService where T : Aggregate { }
 
-public interface IApplicationService<T, TState, TId>
-    where T : Aggregate<TState, TId>
-    where TState : AggregateState<TState, TId>, new()
+public interface IApplicationService<TAggregate, TState, TId>
+    where TAggregate : Aggregate<TState>
+    where TState : AggregateState<TState>, new()
     where TId : AggregateId
 {
-    Task<Result<TState, TId>> Handle(object command, CancellationToken cancellationToken);
+    Task<Result<TState>> Handle(object command, CancellationToken cancellationToken);
 }

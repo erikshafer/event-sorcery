@@ -1,4 +1,5 @@
 ﻿using EventSorcery.Aggregates;
+using EventSorcery.Exceptions;
 using EventSorcery.Tools;
 
 namespace EventSorcery.Stores;
@@ -21,17 +22,17 @@ public record StreamName
 
     public static StreamName For<T>(string entityId) => new($"{typeof(T).Name}-{Ensure.NotEmptyString(entityId)}");
 
-    public static StreamName For<T, TState, TId>(TId aggregateId)
-        where T : Aggregate<TState, TId>
-        where TState : AggregateState<TState, TId>, new()
-        where TId : AggregateId => For<T>(aggregateId);
-        
+    public static StreamName For<T, TId>(TId entityId)
+        where T : Aggregate where TId : AggregateId
+        => new($"{typeof(T).Name}-{Ensure.NotEmptyString(entityId.ToString())}");
+
+    public static StreamName For<T, TState, TId>(TId entityId)
+        where T : Aggregate<TState> where TState : AggregateState<TState>, new() where TId : AggregateId
+        => new($"{typeof(T).Name}-{Ensure.NotEmptyString(entityId.ToString())}");
+
+    public string GetId() => Value[(Value.IndexOf("-", StringComparison.InvariantCulture) + 1)..];
+    
     public static implicit operator string(StreamName streamName) => streamName.Value;
 
     public override string ToString() => Value;
-}
-
-public class InvalidStreamName : Exception {
-    public InvalidStreamName(string? streamName)
-        : base($"Stream name is {(string.IsNullOrWhiteSpace(streamName) ? "empty" : "invalid")}") { }
 }

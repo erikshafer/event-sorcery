@@ -25,19 +25,16 @@ public record ErrorResult : Result
     public string Message { get; }
 }
 
-public abstract record Result<TState, TId>(TState? State, bool Success, IEnumerable<Change>? Changes = null)
-    where TState : AggregateState<TState, TId>, new()
-    where TId : AggregateId;
-    
-public record OkResult<TState, TId>(TState State, IEnumerable<Change> Changes, ulong StreamPosition)
-    : Result<TState, TId>(State, true, Changes)
-    where TState : AggregateState<TState, TId>, new()
-    where TId : AggregateId;
+public abstract record Result<TState>(TState? State, bool Success, IEnumerable<Change>? Changes = null)
+    where TState : AggregateState<TState>, new();
 
-public record ErrorResult<TState, TId> : Result<TState, TId>
-    where TState : AggregateState<TState, TId>, new()
-    where TId : AggregateId {
-    
+public record OkResult<TState>(TState State, IEnumerable<Change> Changes, ulong StreamPosition)
+    : Result<TState>(State, true, Changes)
+    where TState : AggregateState<TState>, new();
+
+public record ErrorResult<TState> : Result<TState>
+    where TState : AggregateState<TState>, new()
+{
     public string Message { get; init; }
 
     [JsonIgnore]
