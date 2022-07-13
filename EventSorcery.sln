@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSorcery", "src\EventSorcery\EventSorcery.csproj", "{F2C315D6-58DF-436D-85FB-2B2330E28AEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSorcery", "EventSorcery\EventSorcery.csproj", "{F2C315D6-58DF-436D-85FB-2B2330E28AEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{96F39B36-D2F1-4398-9AF7-505FE3728039}"
 EndProject
